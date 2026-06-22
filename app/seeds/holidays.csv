@@ -1,0 +1,21 @@
+name,date,location,is_optional
+New Year's Day,2026-01-01,India,false
+Pongal,2026-01-15,Tamil Nadu,false
+Thiruvalluvar Day,2026-01-16,Tamil Nadu,false
+Uzhavar Thirunal,2026-01-17,Tamil Nadu,false
+Republic Day,2026-01-26,India,false
+Thai Poosam,2026-02-01,Tamil Nadu,true
+Ramzan Id / Eid al-Fitr,2026-03-21,India,false
+Good Friday,2026-04-03,India,false
+Tamil New Year,2026-04-14,Tamil Nadu,false
+Bakrid / Eid al-Adha,2026-05-27,India,false
+Muharram,2026-06-16,India,false
+Independence Day,2026-08-15,India,false
+Janmashtami,2026-09-03,India,true
+Milad-un-Nabi,2026-09-15,India,false
+Vinayaka Chaturthi,2026-09-16,India,false
+Mahatma Gandhi Jayanti,2026-10-02,India,false
+Ayudha Pooja,2026-10-20,Tamil Nadu,false
+Vijayadashami,2026-10-21,Tamil Nadu,false
+Deepavali,2026-11-08,India,false
+Christmas Day,2026-12-25,India,false
