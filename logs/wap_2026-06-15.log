@@ -1,0 +1,13 @@
+2026-06-15 12:05:52.697 | INFO     | app.services.extraction_service:run_extraction_for_day:137 - Extraction complete: {'date': '2026-06-15', 'messages_processed': 0, 'updates_created': 0, 'skipped': 0}
+2026-06-15 12:28:35.447 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Pavithra Uthrah R. K. on 2026-06-15
+2026-06-15 13:05:18.165 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Dr. Dhinesh Raj K. S. on 2026-06-15
+2026-06-15 13:05:18.170 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Dhenathayalan on 2026-06-15
+2026-06-15 13:05:18.174 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Hiran Gabriel D. J. on 2026-06-15
+2026-06-15 13:05:18.177 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Vignesh Kannan B. J. on 2026-06-15
+2026-06-15 13:05:18.181 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Aravinth on 2026-06-15
+2026-06-15 13:05:18.183 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Dev Chander on 2026-06-15
+2026-06-15 13:05:18.185 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Catherine on 2026-06-15
+2026-06-15 13:05:18.186 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Pavithra Uthrah R. K. on 2026-06-15
+2026-06-15 13:05:18.188 | INFO     | app.services.extraction_service:process_single_message:72 - Duplicate update skipped for Pavithra Uthrah R. K. on 2026-06-15
+2026-06-15 13:05:18.297 | INFO     | app.services.extraction_service:run_extraction_for_day:137 - Extraction complete: {'date': '2026-06-15', 'messages_processed': 9, 'updates_created': 0, 'skipped': 9}
+2026-06-15 13:08:18.134 | INFO     | app.services.extraction_service:run_extraction_for_day:137 - Extraction complete: {'date': '2026-06-15', 'messages_processed': 0, 'updates_created': 0, 'skipped': 0}
