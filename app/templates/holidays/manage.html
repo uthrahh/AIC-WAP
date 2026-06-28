@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<h3>Manage Holidays</h3>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ holiday.date }}</td>
+            <td>{{ holiday.date.strftime("%A") }}</td>
+            <td>{{ holiday.name }}</td>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for holiday in holidays %}
+
+    <tr>
+
+        <td>{{ holiday.date }}</td>
+
+        <td>{{ holiday.name }}</td>
+
+        <td>
+
+            <a
+                href="/holidays/edit/{{ holiday.id }}"
+                class="btn btn-warning btn-sm"
+            >
+                Edit
+            </a>
+
+            <a
+                href="/holidays/delete/{{ holiday.id }}"
+                class="btn btn-danger btn-sm"
+                onclick="return confirm('Delete holiday?')"
+            >
+                Delete
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

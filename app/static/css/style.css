@@ -1,0 +1,25 @@
+body{
+    background:#f8f9fa;
+}
+
+.page-title{
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.action-links a{
+    text-decoration:none;
+    font-weight:600;
+    margin-right:20px;
+}
+
+.section-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.table{
+    vertical-align:middle;
+}

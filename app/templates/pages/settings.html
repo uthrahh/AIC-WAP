@@ -1,0 +1,337 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<h2 class="page-title">
+    Settings
+</h2>
+
+<ul
+    class="nav nav-tabs"
+    id="settingsTabs"
+    role="tablist"
+>
+
+    <li class="nav-item">
+
+        <button
+            class="nav-link active"
+            data-bs-toggle="tab"
+            data-bs-target="#employees"
+        >
+            Employees
+        </button>
+
+    </li>
+
+    <li class="nav-item">
+
+        <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#holidays"
+        >
+            Holidays
+        </button>
+
+    </li>
+
+</ul>
+{% if employee_add %}
+
+<div class="card mb-4">
+
+    <div class="card-body">
+
+        <h5>Add Employee</h5>
+
+        <form
+            method="post"
+            action="/employees/add"
+        >
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <input name="name" class="form-control" placeholder="Name" required>
+                </div>
+
+                <div class="col-md-2">
+                    <input name="designation" class="form-control" placeholder="Designation">
+                </div>
+
+                <div class="col-md-2">
+                    <input name="phone_number" class="form-control" placeholder="Number" required>
+                </div>
+
+                <div class="col-md-3">
+                    <input name="whatsapp_name" class="form-control" placeholder="Username">
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-primary mt-3"
+                type="submit"
+            >
+                Save Employee
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endif %}
+<div class="tab-content mt-4">
+
+    <div
+        class="tab-pane fade show active"
+        id="employees"
+    >
+
+        <div class="action-links mb-3">
+
+            <a href="?employee_manage=1">Manage</a> |
+            <a href="?employee_add=1">Add</a> |
+            <a href="/employees/download">Download</a>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Number</th>
+                            <th>Username</th>
+
+                            {% if employee_manage %}
+                            <th>Actions</th>
+                            {% endif %}
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for employee in employees %}
+
+                        <tr>
+
+                            <td>{{ employee.id }}</td>
+                            <td>{{ employee.name }}</td>
+                            <td>{{ employee.designation }}</td>
+                            <td>{{ employee.phone_number }}</td>
+                            <td>{{ employee.whatsapp_name }}</td>
+
+                            {% if employee_manage %}
+                            <td>
+
+                                <a href="/employees/edit/{{ employee.id }}">
+                                    ✏️
+                                </a>
+
+                                &nbsp;
+
+                                <a href="/employees/delete/{{ employee.id }}">
+                                    🗑️
+                                </a>
+
+                            </td>
+                            {% endif %}
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="tab-pane fade"
+        id="holidays"
+    >
+
+        <div class="action-links mb-3">
+
+            <a href="?holiday_manage=1">Manage</a> |
+            <a href="?holiday_add=1">Add</a> |
+            <a href="/api/holidays/download">Download</a>
+
+        </div>
+
+        {% if holiday_add %}
+
+        <div class="card mb-4">
+
+            <div class="card-body">
+
+                <h5>Add Holiday</h5>
+
+                <form
+                    method="post"
+                    action="/api/holidays/add"
+                >
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            <input
+                                type="date"
+                                name="date"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                placeholder="Holiday Name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary mt-3"
+                        type="submit"
+                    >
+                        Save Holiday
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>S.No</th>
+                            <th>Date</th>
+                            <th>Day</th>
+                            <th>Holiday</th>
+
+                            {% if holiday_manage %}
+                            <th>Actions</th>
+                            {% endif %}
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for holiday in holidays %}
+
+                        <tr>
+
+                            <td>{{ loop.index }}</td>
+
+                            <td>
+                                {{ holiday.date.strftime("%d-%m-%Y") }}
+                            </td>
+
+                            <td>
+                                {{ holiday.date.strftime("%A") }}
+                            </td>
+
+                            <td>
+                                {{ holiday.name }}
+                            </td>
+
+                            {% if holiday_manage %}
+                            <td>
+
+                                <a
+                                    href="/api/holidays/edit/{{ holiday.id }}"
+                                >
+                                    ✏️
+                                </a>
+
+                                <a
+                                    href="/api/holidays/delete/{{ holiday.id }}"
+                                >
+                                    🗑️
+                                </a>
+
+                            </td>
+                            {% endif %}
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const url = window.location.search;
+
+    if (
+        url.includes("holiday_add=1") ||
+        url.includes("holiday_manage=1")
+    ) {
+
+        const holidayTab = new bootstrap.Tab(
+            document.querySelector(
+                '[data-bs-target="#holidays"]'
+            )
+        );
+
+        holidayTab.show();
+    }
+
+});
+
+</script>
+
+{% endblock %}

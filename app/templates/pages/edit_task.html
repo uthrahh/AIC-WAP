@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<h2>Edit Task</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+
+        <label>Task</label>
+
+        <input
+            name="task_name"
+            class="form-control"
+            value="{{ task.task_name }}"
+        >
+
+    </div>
+
+    <div class="mb-3">
+
+        <label>Description</label>
+
+        <textarea
+            name="description"
+            class="form-control"
+        >{{ task.description }}</textarea>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label>Deadline</label>
+
+        <input
+            type="date"
+            name="target_date"
+            class="form-control"
+            value="{{ task.target_date }}"
+        >
+
+    </div>
+
+    <button
+        class="btn btn-primary"
+        type="submit"
+    >
+        Save
+    </button>
+
+</form>
+
+{% endblock %}

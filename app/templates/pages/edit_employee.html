@@ -1,0 +1,67 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<h2>Edit Employee</h2>
+
+<div class="card">
+
+    <div class="card-body">
+
+        <form
+            method="post"
+            action="/employees/edit/{{ employee.id }}"
+        >
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <input
+                        name="name"
+                        class="form-control"
+                        value="{{ employee.name }}"
+                        required
+                    >
+                </div>
+
+                <div class="col-md-3">
+                    <input
+                        name="designation"
+                        class="form-control"
+                        value="{{ employee.designation }}"
+                    >
+                </div>
+
+                <div class="col-md-3">
+                    <input
+                        name="phone_number"
+                        class="form-control"
+                        value="{{ employee.phone_number }}"
+                        required
+                    >
+                </div>
+
+                <div class="col-md-3">
+                    <input
+                        name="whatsapp_name"
+                        class="form-control"
+                        value="{{ employee.whatsapp_name }}"
+                    >
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-primary mt-3"
+                type="submit"
+            >
+                Update Employee
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

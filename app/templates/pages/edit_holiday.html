@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-body">
+
+        <h3>Edit Holiday</h3>
+
+        <form
+            method="post"
+            action="/api/holidays/edit/{{ holiday.id }}"
+        >
+
+            <input
+                type="date"
+                name="date"
+                value="{{ holiday.date }}"
+                class="form-control mb-3"
+            >
+
+            <input
+                type="text"
+                name="name"
+                value="{{ holiday.name }}"
+                class="form-control mb-3"
+            >
+
+            <button
+                class="btn btn-primary"
+                type="submit"
+            >
+                Save
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
